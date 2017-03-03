@@ -13,7 +13,9 @@
   <body>
     
   </body> 
+  
   <!-- Script -->
   <script src="bootstrap/js/bootsrapt.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   
 </html>
