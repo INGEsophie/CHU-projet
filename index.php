@@ -1,7 +1,6 @@
 <!Doctype html>
 <html>
   <head>
-
     <meta charset="utf-8">
     <title>PROJET CHU</title>
     
@@ -14,4 +13,7 @@
   <body>
     
   </body> 
+  <!-- Script -->
+  <script src="bootstrap/js/bootsrapt.min.js"></script>
+  
 </html>
