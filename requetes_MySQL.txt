@@ -1,0 +1,63 @@
+Ajout d'un patient
+
+INSERT INTO Patients 
+VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', '
+
+------------------------------------------------------------------------
+
+Ajout d'un service
+
+INSERT INTO Services 
+VALUES ('IdService', 'NomService')
+
+------------------------------------------------------------------------
+
+Ajout d'une consultation
+
+INSERT INTO Consultations 
+VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'ButConsul')
+
+------------------------------------------------------------------------
+
+Modification infos personnelles patient
+
+UPDATE patients SET Nom = 'New_Nom'
+UPDATE patients SET Prenom = 'New_Prenom'
+UPDATE patients SET DateNaissance = 'New_DateNaissance'
+UPDATE patients SET AdressPostale = 'New_AdressPostale'
+UPDATE patients SET NumSecu = 'New_NumSecu'
+
+------------------------------------------------------------------------
+
+Modification consultation patient
+
+------------------------------------------------------------------------
+
+Supprimer un patient
+
+DELETE FROM patients WHERE IdPatient='IdPatient'
+
+------------------------------------------------------------------------
+
+Supprimer un service
+
+DELETE FROM services WHERE NomService = 'NomService'
+
+-------------
+-----------------------------------------------------------
+
+Supprimer une consultation
+
+DELETE FROM consultations WHERE IdConsul = 'IdConsul'
+
+------------------------------------------------------------------------
+
+Affichage fiche patient
+
+SELECT patients.Nom, patients.Prenom, patients.DateNaissance, patients.NumSecu, patients.AdressPostale, consultations.DateConsul, consultations.ButConsul, services.NomService 
+FROM patients 
+INNER JOIN consultations 
+ON consultations.fk_IdPatient=patients.IdPatient 
+INNER JOIN services 
+ON consultations.fk_IdService=services.IdService 
+WHERE Nom='Nom'
