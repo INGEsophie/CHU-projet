@@ -8,6 +8,7 @@ Prenom varchar(255) NOT NULL,
 DateNaissance date NOT NULL,
 AdressPostale varchar(255) NOT NULL,
 NumSecu int NOT NULL UNIQUE
+Email varchar(255),
 );
 
 CREATE TABLE Services
@@ -22,5 +23,6 @@ IdConsul int NOT NULL PRIMARY KEY,
 fk_IdPatient int NOT NULL,
 fk_IdService int NOT NULL,
 DateConsul date NOT NULL,
+HeureConsul time NOT NULL,
 ButConsul varchar(255) NOT NULL
 );
