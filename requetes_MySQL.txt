@@ -1,21 +1,21 @@
 Ajout d'un patient
 
 INSERT INTO Patients 
-VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', 'NumSecu', 'Email'
+VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', 'NumSecu', 'Email');
 
 ------------------------------------------------------------------------
 
 Ajout d'un service
 
 INSERT INTO Services 
-VALUES ('IdService', 'NomService')
+VALUES ('IdService', 'NomService');
 
 ------------------------------------------------------------------------
 
 Ajout d'une consultation
 
 INSERT INTO Consultations 
-VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul', 'ButConsul')
+VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul', 'ButConsul');
 
 ------------------------------------------------------------------------
 

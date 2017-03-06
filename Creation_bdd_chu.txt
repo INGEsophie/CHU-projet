@@ -7,7 +7,7 @@ Nom varchar(255) NOT NULL,
 Prenom varchar(255) NOT NULL,
 DateNaissance date NOT NULL,
 AdressPostale varchar(255) NOT NULL,
-NumSecu int NOT NULL UNIQUE,
+NumSecu int(15) NOT NULL,
 Email varchar(255)
 );
 
