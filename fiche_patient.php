@@ -16,7 +16,7 @@
 
 		<title>Fiche patient</title>
 	</head>
-	<body>
+	<body class="bodyh">
 
 
 
@@ -51,7 +51,7 @@
     <div class="container">
 	<div class="row">
 
-        <div class="span4">
+        <div class="span4" >
         <form class="form-search">
             <div class="input-append">
                 <input type="text" class="span2">
@@ -64,10 +64,10 @@
 
     <div class="dateform"><p>Date</p>
  <input type="text" id="date" name="date" class="form-control" placeholder="date" required>
-                        </div>
+
                         <br><br>
   <button type="submit" class="btn btn-primary" id="submit">OK</button>
-
+</div>
     </div>
   </div>
 

@@ -34,7 +34,19 @@ h1, h2 {
   text-transform: uppercase;
   margin-bottom: 25px;
 }
+.span4{
+position: :relative;
+margin-left: 40%;
+}
+.dateform
+{
+position: :relative;
+margin-left: 40%;
+}
 
+.bodyh{
+image:('hh.jpg');
+}
 .container p {margin-top: 10px;}
 
 /*NAV*/
