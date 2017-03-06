@@ -38,7 +38,7 @@
        
    </fieldset>
     
-    <br><br>
+    <br>
     
         <fieldset>
             <legend>Votre consultation</legend>
