@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS bdchu;
 
 CREATE TABLE Patients
 (
-IdPatient int NOT NULL PRIMARY KEY,
+IdPatient int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 Nom varchar(255) NOT NULL,
 Prenom varchar(255) NOT NULL,
 DateNaissance date NOT NULL,
@@ -13,13 +13,13 @@ Email varchar(255)
 
 CREATE TABLE Services
 (
-IdService int NOT NULL PRIMARY KEY,
+IdService int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 NomService varchar(255) NOT NULL
 );
 
 CREATE TABLE Consultations
 (
-IdConsul int NOT NULL PRIMARY KEY,
+IdConsul int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 fk_IdPatient int NOT NULL,
 fk_IdService int NOT NULL,
 DateConsul date NOT NULL,

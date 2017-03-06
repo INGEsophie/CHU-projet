@@ -10,7 +10,7 @@ INSERT INTO Patients
 VALUES ('3', 'Luis', 'Peter', '1968-11-04', '54 boulevard de la Seine 76000 Rouen', '168117645214875', 'luispeter@gmail.com');
 
 INSERT INTO Patients 
-VALUES ('4', 'Casier', 'Sylvie', '1982-01-15', '12 rue de la grosse horloge 76000 Rouen', '282017625487541', 'sylviepanier@orange.fr');
+VALUES ('4', 'Casier', 'Sylvie', '1982-01-15', '12 rue de la grosse horloge 76000 Rouen', '282017625487541', 'sylviecasier@orange.fr');
 
 INSERT INTO Patients 
 VALUES ('5', 'Petit', 'Luc', '2009-07-30', '4 rue du Maréchal Joffre 27400 louviers', '109072741526825', 'luc.petit@free.fr');
