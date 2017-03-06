@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+		<meta charset="utf-8"/>
         <title>Test Base de donnée</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
@@ -25,7 +26,6 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connected successfully";
 		
 		$sql = "SELECT * FROM consultations 
 		INNER JOIN services
