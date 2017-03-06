@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail First" src="../images/pediatre.jpg" />
+              <img alt="Bootstrap Thumbnail First" src="images/pediatre.jpg" />
               <div class="caption">
                 <h3>
                   Pédiatrie
@@ -40,7 +40,7 @@
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail Second" src="../urgence.jpg" />
+              <img alt="Bootstrap Thumbnail Second" src="images/urgence.jpg" />
               <div class="caption">
                 <h3>
                   Urgence
@@ -56,7 +56,7 @@
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail Third" src="../images/maternite.png" />
+              <img alt="Bootstrap Thumbnail Third" src="images/maternite.png" />
               <div class="caption">
                 <h3>
                   Maternité
@@ -78,7 +78,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail First" src="../images/consultation.png" />
+                      <img alt="Bootstrap Thumbnail First" src="images/consultation.png" />
                       <div class="caption">
                         <h3>
                           Consultation génèrale
@@ -94,7 +94,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail Second" src="../images/radiologie.jpg" />
+                      <img alt="Bootstrap Thumbnail Second" src="images/radiologie.jpg" />
                       <div class="caption">
                         <h3>
                           Radiologie
@@ -110,7 +110,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail Third" src="../images/chirurgie.jpg" />
+                      <img alt="Bootstrap Thumbnail Third" src="images/chirurgie.jpg" />
                       <div class="caption">
                         <h3>
                           Chiurgie
