@@ -41,7 +41,52 @@
        
     </fieldset>
     
+<<<<<<< HEAD
   </form>
+=======
+    <br>
+    
+        <fieldset>
+            <legend>Votre consultation</legend>
+            
+      <label for="DateConsul">Le jour de consultation</label>
+       <input type="date" name="dateConsul" id="dateConsul"><br><br>
+        
+     <label for="HeureConsul">L'heure de consultation</label>
+       <input type="time" name="heureConsul" id="heureConsul"><br><br>
+            
+            
+    <label for="ButConsul">Le but de la consultation :</label>
+            <input type="text" name="butconsul" id="ButConsul"  size="30" maxlength="80" /><br><br>
+            
+       
+    <label for="NomService">Le service :</label>
+            <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>    
+      
+        </fieldset>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/origin/frejodo
 
   <?php 
     include("footer.html");
