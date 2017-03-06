@@ -24,10 +24,10 @@
         <div class="row">
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail First" src="images/pediatre.jpg" />
+              <img class="image" alt="Bootstrap Thumbnail First" src="images/pediatre.jpg" />
               <div class="caption">
                 <h3>
-                  Pédiatrie
+                  P&eacute;diatrie
                 </h3>
                 <p>
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -37,7 +37,7 @@
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail Second" src="images/urgence.jpg" />
+              <img class="image" alt="Bootstrap Thumbnail Second" src="images/urgence.jpg" />
               <div class="caption">
                 <h3>
                   Urgence
@@ -50,10 +50,10 @@
           </div>
           <div class="col-md-4">
             <div class="thumbnail">
-              <img alt="Bootstrap Thumbnail Third" src="images/maternite.png" />
+              <img class="image" alt="Bootstrap Thumbnail Third" src="images/maternite.png" />
               <div class="caption">
                 <h3>
-                  Maternité
+                  Maternit&eacute;
                 </h3>
                 <p>
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -69,10 +69,10 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail First" src="images/consultation.png" />
+                      <img class="image" alt="Bootstrap Thumbnail First" src="images/consultation.png" />
                       <div class="caption">
                         <h3>
-                          Consultation génèrale
+                          Consultation g&eacute;n&egrave;rale
                         </h3>
                         <p>
                           Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -82,7 +82,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail Second" src="images/radiologie.jpg" />
+                      <img class="image" alt="Bootstrap Thumbnail Second" src="images/radiologie.jpg" />
                       <div class="caption">
                         <h3>
                           Radiologie
@@ -95,7 +95,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="thumbnail">
-                      <img alt="Bootstrap Thumbnail Third" src="images/chirurgie.jpg" />
+                      <img class="image" alt="Bootstrap Thumbnail Third" src="images/chirurgie.jpg" />
                       <div class="caption">
                         <h3>
                           Chiurgie
