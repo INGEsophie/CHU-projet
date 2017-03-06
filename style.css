@@ -28,25 +28,29 @@ img {
 	margin: 0px;
 }
 
+.bodyh{
+background-image: url(hh.jpg);
+
+}
+
+.span4{
+
+  margin-left: 40%;
+}
+
+.dateform{
+
+  margin-left: 40%;
+}
+
+
 /*Text MEP*/
 h1, h2 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 25px;
 }
-.span4{
-position: :relative;
-margin-left: 40%;
-}
-.dateform
-{
-position: :relative;
-margin-left: 40%;
-}
 
-.bodyh{
-image:('hh.jpg');
-}
 .container p {margin-top: 10px;}
 
 /*NAV*/
