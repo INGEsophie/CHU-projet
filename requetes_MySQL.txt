@@ -21,12 +21,12 @@ VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul',
 
 Modification infos personnelles patient
 
-UPDATE patients SET Nom = 'New_Nom'
-UPDATE patients SET Prenom = 'New_Prenom'
-UPDATE patients SET DateNaissance = 'New_DateNaissance'
-UPDATE patients SET AdressPostale = 'New_AdressPostale'
-UPDATE patients SET NumSecu = 'New_NumSecu'
-UPDATE patients SET Email = 'New_Email'
+UPDATE patients SET Nom = 'New_Nom' WHERE IdPatient='id'
+UPDATE patients SET Prenom = 'New_Prenom' WHERE IdPatient='id'
+UPDATE patients SET DateNaissance = 'New_DateNaissance' IdPatient='id'
+UPDATE patients SET AdressPostale = 'New_AdressPostale' IdPatient='id'
+UPDATE patients SET NumSecu = 'New_NumSecu' IdPatient='id'
+UPDATE patients SET Email = 'New_Email' IdPatient='id'
 
 ------------------------------------------------------------------------
 
