@@ -13,7 +13,7 @@
     include("header.html"); 
   ?>
 
-  <div class="container-fluid text-center">
+  <div class="container-fluid">
     <h2>Formulaire d'hospitalisation</h2>
     <form method="post" action="traitement.php" class="formulaire">
       <fieldset>
@@ -53,7 +53,7 @@
         <label for="NomService">Le service :</label>
         <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>    
       </fieldset>
-	<input type="submit" name="envoyer" value="Envoyer" />
+      <input type="submit" name="envoyer" value="Envoyer" class="btn bnt-defaut" />
     </form>
   </div>
 
