@@ -53,6 +53,7 @@
         <label for="NomService">Le service :</label>
         <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>    
       </fieldset>
+	<input type="submit" name="envoyer" value="Envoyer" />
     </form>
   </div>
 
