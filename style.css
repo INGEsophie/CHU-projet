@@ -29,6 +29,12 @@ img {
 }
 
 /*Text MEP*/
+h1, h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
 .container p {margin-top: 10px;}
 
 /*NAV*/
@@ -88,6 +94,13 @@ img {
 }
 
 /*index*/
+.intro {
+  text-align: center;
+  padding: 100px 0 200px 0;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
 
 .image{
   width: 100%;
