@@ -16,27 +16,30 @@
    <fieldset>
        <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
 
-       <label for="Nom">Quel est votre nom ?</label>
-       <input type="text" name="nom" id="Nom" /><br><br>
+       <label for="nom">Quel est votre nom ?</label>
+       <input type="text" name="nom" id="nom" /><br><br>
 
-       <label for="Prenom">Quel est votre prénom ?</label>
-       <input type="text" name="Prenom" id="Prenom" /><br><br>
+       <label for="prenom">Quel est votre prénom ?</label>
+       <input type="text" name="prenom" id="prenom" /><br><br>
  
-       <label for="Email">Quel est votre e-mail ?</label>
-       <input type="Email" name="Email" id="Email" /><br><br>
+       <label for="email">Quel est votre e-mail ?</label>
+       <input type="email" name="email" id="email" /><br><br>
        
-       <label for="DateNaissance">Quel est votre date de naissance ?</label>
-       <input type="date" name="DateNaissance" id="DateNaissance"><br><br>
+       <label for="email">Quel est votre date de naissance ?</label>
+       <input type="date" name="dateNaissance" id="dateNaissance"><br><br>
 
-       <label for="AdressePostale">Votre adresse :</label>
-            <input type="text" name="AdressePostale" id="AdressePostale"  size="30" maxlength="80" /><br><br>
+       <label for="adresse">Votre adresse :</label>
+            <input type="text" name="adresse" id="adresse"  size="30" maxlength="80" /><br><br>
        
-       <label for="NumSecu">Votre numero de sécurité social :</label>
-       <input type="int" name="NumSecu" id="NumSecu" size="15" minlength="15" maxlength="15" />
+       <label for="nusocial">Votre numero de sécurité social :</label>
+       <input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" />
        
-       </fieldset>
        
+       
+   </fieldset>
+    
     <br><br>
+    
         <fieldset>
             <legend>Votre consultation</legend>
             
@@ -55,7 +58,6 @@
             <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>    
       
         </fieldset>
-    
     </form>
 
 
