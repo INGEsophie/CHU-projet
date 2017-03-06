@@ -1,0 +1,45 @@
+Gestion des branches sur git avec github desktop
+
+1- Si le projet est en local:
+
+On ajoute un projet (situé en local) à github Desktop
+
+On commit pour l'ajouter à git
+
+On le publie sur github.com
+
+On synchronise pour que tout le projet soit ajouter sur github.com
+création d'une nouvelle branche ( exemple : anouchka)
+
+On synchronise/publie pour que la branche apparaisse en ligne sur github.com (avec le bouton "sync" ou "Publish" à droite en haut)
+
+On modifie le projet en restant sur la branche(anouchka)
+
+On commit et on synchronise les modifications sur github.com uniquement sur la branche anouchka
+
+On crée un "pull request" sur la branche anouchka pour envoyer des fusion sur github.com OU BIEN
+
+Sur github.com on pourra faire depuis la branche anouchka un "New pull request"
+
+
+2- SINON SI le projet est déjà ajouté à github Desktop:
+
+création d'une nouvelle branche ( exemple : anouchka)
+
+On synchronise/publie pour que la branche apparaisse en ligne sur github.com (avec le bouton "sync" ou "Publish" à droite en haut)
+
+On modifie le projet en restant sur la branche(anouchka)
+
+On commit et on synchronise les modifications sur github.com uniquement sur la branche anouchka
+
+On crée un "pull request" sur la branche anouchka pour envoyer des fusion sur github.com OU BIEN
+
+Sur github.com on pourra faire depuis la branche anouchka un "New pull request"
+
+********************************************
+Avant de commencer à travailler sur sa branche :
+
+1- il faut d'abord faire une synchronisation entre le master en ligne et le master en local
+
+2- Ensuite faire une synchronisation entre le master en local et votre branche
+
