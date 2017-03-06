@@ -1,12 +1,4 @@
-﻿<?php
-/* 
-<!-- On va afficher les consultations de date à date dans un tableau dans cet exemple --> 
-
-
-*/
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
     <head>
 		<meta charset="utf-8"/>
@@ -15,8 +7,21 @@
     </head>
     <body>
 	
+		<form action="#" method="post">
+			<input type="date" name="dateun" id="dateun">
+			<input type="date" name="datedeux" id="datedeux">
+			<input type="submit">
+		</form>
+		
+		
+		
         <?php //Connection avec la BDD.
-				
+
+		//<!-- On va afficher les consultations de date à date dans un tableau dans cet exemple --> 
+		
+		$dateun = isset($_POST['dateun']) ? $_POST['dateun'] : NULL;
+		$datedeux = isset($_POST['datedeux']) ? $_POST['datedeux'] : NULL;
+		
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
@@ -28,13 +33,13 @@
 			die("Connection failed: " . $conn->connect_error);
 		}
 		
-		$sql = "SELECT * FROM consultations 
+		$sql = ' SELECT * FROM consultations 
 		INNER JOIN services
 		ON consultations.fk_IdService=services.IdService
 		INNER JOIN patients
 		ON consultations.fk_IdPatient=patients.IdPatient
 		WHERE consultations.DateConsul 
-		BETWEEN '2017-01-01' AND '2017-03-06'";
+		BETWEEN \' '.$dateun.' \' AND \' '.$datedeux.' \' ';
 		$result = $conn->query($sql);
 		
 		//On affiche les lignes du tableau une à une à l'aide d'une boucle
