@@ -34,7 +34,7 @@ die("Connection failed: " . $conn->connect_error);
   
   <div class="container-fluid">
     <h2>Editer ses informations personnelles</h2>
-    <form method="get" action="#" class="formulaire">
+    <form method="get" action="EditionDonneesPatient.php" class="formulaire">
       <fieldset>
         <legend>Pour modifier vos coordonnées vous devez vous identifier puis valider vos modifications</legend> <!-- Titre du fieldset --> 
 		
