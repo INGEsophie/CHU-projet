@@ -20,7 +20,7 @@ $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : NULL;
 $email = isset($_POST['email']) ? $_POST['email'] : NULL;
 $datenaissance = isset($_POST['datenaissance']) ? $_POST['datenaissance'] : NULL;
 $adressepostale = isset($_POST['adresse']) ? $_POST['adresse'] : NULL;
-$numsecu = isset($_POST['NumSecu']) ? $_POST['NumSecu'] : NULL;
+$numsecu = isset($_POST['numsecu']) ? $_POST['numsecu'] : NULL;
 
   
 $servername = "localhost";
@@ -33,7 +33,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully"; 
+//echo "Connected successfully"; 
 $sql = 'INSERT INTO patients 
 VALUES("", "'.$nom.'", "'.$prenom.'", "'.$datenaissance.'" , "'.$adressepostale.'", "'.$numsecu.'", "'.$email.'")';
 if ($conn->query($sql) === TRUE) {
@@ -48,7 +48,7 @@ $conn->close();
   echo("<center>La date est: $email</center><br><br>"); 
   echo("<center>Le lieu de naissance est: $datenaissance</center><br><br>");
   echo("<center>L'adresse postale est: $adressepostale</center><br><br>");   
-  echo("<center>Le code postal est: $numsecu</center><br><br>"); 
+  echo("<center>Le num sécu: $numsecu</center><br><br>"); 
  
  
   ?>
