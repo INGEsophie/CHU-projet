@@ -21,7 +21,36 @@
     <div class="row formulaire">
     	<legend>Patients enregistrés</legend><br>
         <form class="form-search">
-          <input type="text">
+          <select>
+		    <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bdchu";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully"; 
+$sql = 'SELECT * FROM patients ';
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+   
+ while($donnees = $result->fetch_assoc()) {
+       
+       echo ('<option>'.$donnees['Nom'].''.$donnees['Prenom'].'</option>');
+      
+      }
+       
+} 
+else {
+    echo "0 results";
+}
+$conn->close();
+?>
+		  </select>
           <button type="submit" class="btn" id="patients" name="patients">Ok</button>
         </form><br>
 
