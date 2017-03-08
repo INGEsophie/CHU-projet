@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -45,18 +45,11 @@
        
     
 
+
     <input type="submit" name="envoyer" value="Envoyer" />
        
 
     </form>
-
-
-
-
-
-
-
-
 
   <?php 
     include("footer.html");
