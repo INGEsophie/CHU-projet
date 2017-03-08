@@ -66,7 +66,6 @@ die("Connection failed: " . $conn->connect_error);
 	</form>
   </div>
 <?php
-$IdPatient = '';
 $IdPatient = $_POST['NomPatient'] ? $_POST['NomPatient'] : NULL;
 
 $sql = ' SELECT * FROM patients WHERE IdPatient='.$IdPatient.'';
@@ -125,12 +124,13 @@ $nusocial = isset($_POST['nusocial']) ? $_POST['nusocial'] : NULL;
 
 
 
-$sql = 'UPDATE patients SET Nom = \''.$nom.'\'
-UPDATE patients SET Prenom = \''.$prenom.'\'
-UPDATE patients SET DateNaissance = \''.$email.'\'
-UPDATE patients SET AdressPostale = \''.$dateNaissance.'\'
-UPDATE patients SET NumSecu = \''.$adresse.'\'
-UPDATE patients SET Email = \''.$nusocial.'\'';
+$sql = 'UPDATE patients 
+		SET Nom = \''.$nom.'\'
+		SET Prenom = \''.$prenom.'\'
+		SET DateNaissance = \''.$email.'\'
+		SET AdressPostale = \''.$dateNaissance.'\'
+		SET NumSecu = \''.$adresse.'\'
+		SET Email = \''.$nusocial.'\'';
 
 
 $conn->close();  
