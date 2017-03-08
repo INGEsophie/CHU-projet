@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -10,7 +10,7 @@
 <body>
 
   <?php 
-    include("header.html"); 
+    //include("header.html"); 
   ?>
 
 
@@ -19,22 +19,22 @@
     <fieldset>
        <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
 
-       <label for="Nom">Quel est votre nom ?</label>
+       <label for="Nom">le nom ?</label>
        <input type="text" name="nom" id="Nom" /><br><br>
 
-       <label for="Prenom">Quel est votre prénom ?</label>
+       <label for="Prenom">le prénom ?</label>
        <input type="text" name="prenom" id="Prenom" /><br><br>
  
-       <label for="Email">Quel est votre e-mail ?</label>
+       <label for="Email"l e-mail ?></label>
        <input type="email" name="email" id="Email" /><br><br>
        
-       <label for="DateNaissance">Quel est votre date de naissance ?</label>
+       <label for="DateNaissance">La date de naissance ?</label>
        <input type="date" name="datenaissance" id="DateNaissance"><br><br>
 
        <label for="AdressePostale">Votre adresse :</label>
             <input type="text" name="adresse" id="AdressePostale"  size="30" maxlength="80" /><br><br>
        
-       <label for="NumSecu">Votre numero de sécurité social :</label>
+       <label for="NumSecu">Le numero de sécurité social :</label>
        <input type="text" name="numsecu" id="NumSecu" size="15" minlength="15" maxlength="15" />
        
        
