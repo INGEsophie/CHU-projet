@@ -2,18 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  
-  
   <title>Centre Hospitalier Universitaire de Rouen</title>
-  
-  
-  </head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
 
 <body>
-    <p>Ceci est votre formulaire d'hospitalisation.</p>
-<form method="post" action="traitement.php">
- 
-   <fieldset>
+
+  <?php 
+    include("header.html"); 
+  ?>
+
+
+  <h2>Formulaire d'hospitalisation.</h2>
+  <form method="post" action="traitement.php">
+    <fieldset>
        <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
 
        <label for="Nom">Quel est votre nom ?</label>
@@ -36,9 +39,8 @@
        
        
        
-   </fieldset>
-    
-    <br>
+    </fieldset>
+
     
         <fieldset>
             <legend>Votre consultation</legend>
@@ -60,8 +62,12 @@
       
         </fieldset>
     
+<<<<<<< HEAD
     <input type="submit" name="envoyer" value="Envoyer" />
        
+=======
+    
+>>>>>>> origin/frejodo
     </form>
 
 
@@ -72,21 +78,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <?php 
+    include("footer.html");
+  ?>
 
 </body>
-		
 		
 </html>

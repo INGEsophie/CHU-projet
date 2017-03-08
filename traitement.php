@@ -11,7 +11,7 @@
   <header></header>
   <h1>Récapitulatif de votre inscription</h1>
   
-  <input type="button" width="100px" height="40px" name="valider" value=" Accès Administrateur" onclick="window.location.href='admin.php';">
+  <input type="button" width="100px" height="40px" name="valider" value=" Accès Administrateur" onclick="window.location.href='formulaire.php';">
   <hr>
   <?php
   
