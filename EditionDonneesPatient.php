@@ -81,22 +81,22 @@ $result = $conn->query($sql);
 		<?php
 	  
         echo '<label for="nom">Nom :</label>';
-        echo '<input type="text" name="nom" id="nom" value="'.$donnees[Nom].'"/><br><br>';
+        echo '<input type="text" name="nom" id="nom" value="'.$donnees['Nom'].'"/><br><br>';
 
         echo '<label for="prenom">Prénom :</label>';
-        echo '<input type="text" name="prenom" id="prenom" value="'.$donnees[Prenom].'"/><br><br>';
+        echo '<input type="text" name="prenom" id="prenom" value="'.$donnees['Prenom'].'"/><br><br>';
    
         echo '<label for="email">Votre Email :</label>';
-        echo '<input type="email" name="email" id="email" value="'.$donnees[Email].'"/><br><br>';
+        echo '<input type="email" name="email" id="email" value="'.$donnees['Email'].'"/><br><br>';
          
         echo '<label for="email">Votre date de naissance :</label>';
-        echo '<input type="date" name="dateNaissance" id="dateNaissance" value="'.$donnees[DateNaissance].'"/><br><br>';
+        echo '<input type="date" name="dateNaissance" id="dateNaissance" value="'.$donnees['DateNaissance'].'"/><br><br>';
 
         echo '<label for="adresse">Votre adresse :</label>';
-        echo '<input type="text" name="adresse" id="adresse"  size="30" maxlength="80" value="'.$donnees[AdressPostale].'"/><br><br>';
+        echo '<input type="text" name="adresse" id="adresse"  size="30" maxlength="80" value="'.$donnees['AdressPostale'].'"/><br><br>';
          
         echo '<label for="nusocial">Votre numero de sécurité social :</label>';
-        echo '<input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" value="'.$donnees[NumSecu].'"/>';
+        echo '<input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" value="'.$donnees['NumSecu'].'"/>';
 		echo '<br><br>';
 		echo '<input type="submit" value="Modifier">';
       
