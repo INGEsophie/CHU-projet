@@ -1,32 +1,32 @@
 Ajout d'un patient
 
 INSERT INTO Patients 
-VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', 'NumSecu', 'Email'
+VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', 'NumSecu', 'Email');
 
 ------------------------------------------------------------------------
 
 Ajout d'un service
 
 INSERT INTO Services 
-VALUES ('IdService', 'NomService')
+VALUES ('IdService', 'NomService');
 
 ------------------------------------------------------------------------
 
 Ajout d'une consultation
 
 INSERT INTO Consultations 
-VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul', 'ButConsul')
+VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul', 'ButConsul');
 
 ------------------------------------------------------------------------
 
 Modification infos personnelles patient
 
-UPDATE patients SET Nom = 'New_Nom'
-UPDATE patients SET Prenom = 'New_Prenom'
-UPDATE patients SET DateNaissance = 'New_DateNaissance'
-UPDATE patients SET AdressPostale = 'New_AdressPostale'
-UPDATE patients SET NumSecu = 'New_NumSecu'
-UPDATE patients SET Email = 'New_Email'
+UPDATE patients SET Nom = 'New_Nom' WHERE IdPatient='id'
+UPDATE patients SET Prenom = 'New_Prenom' WHERE IdPatient='id'
+UPDATE patients SET DateNaissance = 'New_DateNaissance' WHERE IdPatient='id'
+UPDATE patients SET AdressPostale = 'New_AdressPostale' WHERE IdPatient='id'
+UPDATE patients SET NumSecu = 'New_NumSecu' WHERE IdPatient='id'
+UPDATE patients SET Email = 'New_Email' WHERE IdPatient='id'
 
 ------------------------------------------------------------------------
 
