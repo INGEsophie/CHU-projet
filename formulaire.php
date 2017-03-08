@@ -47,14 +47,7 @@
        <label for="NumSecu">Votre numero de sécurité social :</label>
        <input type="text" name="numsecu" id="NumSecu" size="15" minlength="15" maxlength="15" />
        
-       
-       
     </fieldset>
-
-    
-       
-    
-
 
     <input type="submit" name="envoyer" value="Envoyer" />
        
