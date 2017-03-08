@@ -1,5 +1,5 @@
 <!Doctype html>
-<html="fr">
+<html>
 <head>
   <meta charset="utf-8">
   <title>CHU Evreux - Accueil</title>
