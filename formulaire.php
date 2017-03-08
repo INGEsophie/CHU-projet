@@ -1,74 +1,75 @@
-
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Résultat du formulaire</title>
-  </head>
-  
-  <body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Centre Hospitalier Universitaire de Rouen</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
 
-  <header></header>
-  <h1>Récapitulatif de votre inscription</h1>
-  
-  <input type="button" width="100px" height="40px" name="valider" value=" Accès Administrateur" onclick="window.location.href='formulaire.php';">
-  <hr>
-  <?php
-  
-  // On vérifie si la variable existe et sinon elle vaut NULL
-$Nom = isset($_POST['Nom']) ? $_POST['Nom'] : NULL;
-$Prenom = isset($_POST['Prenom']) ? $_POST['Prenom'] : NULL;
-$Email = isset($_POST['Email']) ? $_POST['Email'] : NULL;
-$DateNaissance = isset($_POST['DateNaissance']) ? $_POST['DateNaissance'] : NULL;
-$AdressePostale = isset($_POST['AdressePostale']) ? $_POST['AdressePostale'] : NULL;
-$NumSecu = isset($_POST['NumSecu']) ? $_POST['NumSecu'] : NULL;
-$DateConsul = isset($_POST['DateConsul']) ? $_POST['DateConsul'] : NULL;
-$HeureConsul = isset($_POST['HeureConsul']) ? $_POST['HeureConsul'] : NULL;
-$ButConsul($_POST['ButConsul']) ? $_POST['ButConsul'] : NULL;
-$NomService = isset($_POST['NonService']) ? $_POST['NomService'] : NULL;
+<body>
 
-  
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bdchu";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully"; 
-$sql = 'INSERT INTO patients (IdPatient, Nom, Prenom,DateNaissance, AdressePostale, Email, DateConsul, HeureConsul, NomService) 
-VALUES("", "'.$Nom.'", "'.$Prenom.'", "'.$DateNaissance.'", "'.$Email.'", "'.$AdressePostale.'", "'.$NumSecu.'", "'.$DateConsul.'", "'.$HeureConsul.'", "'.$ButCOnsul.'", "'.$NomService.'")';
-if ($conn->query($sql) === TRUE) {
-    echo "les données ont bien étés insérées dans la base de données";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-$conn->close();  
-  
-  echo("<center>Le nom est: $Nom</center><br><br>");
-  echo("<center>Le prénom est: $Prenom</center><br><br>");
-  echo("<center>La date est: $Email</center><br><br>"); 
-  echo("<center>Le lieu de naissance est: $DateNaissance</center><br><br>");
-  echo("<center>L'adresse postale est: $AdressePostale</center><br><br>");   
-  echo("<center>Le code postal est: $NumSecu</center><br><br>"); 
-  echo("<center>L'email est: $DateConsul</center><br><br>"); 
-  echo("<center>Le site est: $HeureConsul</center><br><br>"); 
-  echo("<center>Le numéro de téléphone est: $ButConsul</center><br><br>"); 
-  echo("<center>Le semestre est: $NomService</center><br><br>"); 
-  
-  
-  echo("<center>Les connaissances sont:</center><br>");
-  foreach((array)$connaissances as $valeur){
-  echo("<center>$valeur</center><br>");
-  }
+  <?php 
+    include("header.html"); 
   ?>
-  <hr>
-  
-  </body>
-  
+
+
+  <h2>Formulaire d'hospitalisation.</h2>
+  <form method="post" action="traitement.php">
+    <fieldset>
+       <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+
+       <label for="Nom">Quel est votre nom ?</label>
+       <input type="text" name="Nom" id="Nom" /><br><br>
+
+       <label for="Prenom">Quel est votre prénom ?</label>
+       <input type="text" name="Prenom" id="Prenom" /><br><br>
+ 
+       <label for="Email">Quel est votre e-mail ?</label>
+       <input type="email" name="Email" id="Email" /><br><br>
+       
+       <label for="DateNaissance">Quel est votre date de naissance ?</label>
+       <input type="date" name="DateNaissance" id="DateNaissance"><br><br>
+
+       <label for="AdressePostale">Votre adresse :</label>
+            <input type="text" name="adresse" id="AdressePostale"  size="30" maxlength="80" /><br><br>
+       
+       <label for="NumSecu">Votre numero de sécurité social :</label>
+       <input type="text" name="NumSecu" id="NumSecu" size="15" minlength="15" maxlength="15" />
+       
+       
+       
+    </fieldset>
+
+    
+        <fieldset>
+            <legend>Votre consultation</legend>
+            
+      <label for="DateConsul">Le jour de consultation</label>
+       <input type="date" name="dateConsul" id="DateConsul"><br><br>
+        
+     <label for="HeureConsul">L'heure de consultation</label>
+       <input type="time" name="HeureConsul" id="HeureConsul"><br><br>
+            
+     <label for="NomService">Le service :</label>
+            <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>            
+            
+    <label for="ButConsul">Le but de la consultation :</label>
+            <textarea name="ButConsul" id="ButConsul" rows="4" cols="50"  ></textarea><br><br>
+            
+       
+   
+      
+        </fieldset>
+    
+    <input type="submit" name="envoyer" value="Envoyer" />
+       
+    </form>
+
+  <?php 
+    include("footer.html");
+  ?>
+
+</body>
+		
 </html>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status 
