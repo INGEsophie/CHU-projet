@@ -11,7 +11,6 @@
   <header></header>
   <h1>Récapitulatif de votre inscription</h1>
   
-  <input type="button" width="100px" height="40px" name="valider" value=" Accès Administrateur" onclick="window.location.href='formulaire.php';">
   <hr>
   <?php
   
@@ -26,7 +25,7 @@ $numsecu = isset($_POST['NumSecu']) ? $_POST['NumSecu'] : NULL;
   
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = " ";
 $dbname = "bdchu";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -35,8 +34,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully"; 
-$sql = 'INSERT INTO patients (IdPatient, Nom, Prenom,DateNaissance, AdressPostale, Email) 
-VALUES("", "'.$nom.'", "'.$prenom.'", "'.$datenaissance.'", "'.$email.'", "'.$adressepostale.'", "'.$numsecu.'")';
+$sql = 'INSERT INTO patients (Nom, Prenom,DateNaissance, AdressPostale, NumSecu, Email) 
+VALUES("'.$nom.'", "'.$prenom.'", "'.$datenaissance.'" , "'.$adressepostale.'", "'.$numsecu.'", "'.$email.'")';
 if ($conn->query($sql) === TRUE) {
     echo "les données ont bien étés insérées dans la base de données";
 } else {
@@ -51,8 +50,6 @@ $conn->close();
   echo("<center>L'adresse postale est: $adressepostale</center><br><br>");   
   echo("<center>Le code postal est: $numsecu</center><br><br>"); 
  
-  
-  
  
   ?>
   <hr>
