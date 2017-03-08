@@ -25,7 +25,7 @@ $numsecu = isset($_POST['NumSecu']) ? $_POST['NumSecu'] : NULL;
   
 $servername = "localhost";
 $username = "root";
-$password = " ";
+$password = "";
 $dbname = "bdchu";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
