@@ -11,7 +11,6 @@
   <header></header>
   <h1>Récapitulatif de votre inscription</h1>
   
-  <input type="button" width="100px" height="40px" name="valider" value=" Accès Administrateur" onclick="window.location.href='formulaire.php';">
   <hr>
   <?php
   
@@ -20,7 +19,11 @@ $nom = isset($_POST['nom']) ? $_POST['nom'] : NULL;
 $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : NULL;
 $email = isset($_POST['email']) ? $_POST['email'] : NULL;
 $datenaissance = isset($_POST['datenaissance']) ? $_POST['datenaissance'] : NULL;
+<<<<<<< HEAD
 $adressepostale = isset($_POST['adresspostale']) ? $_POST['adresspostale'] : NULL;
+=======
+$adressepostale = isset($_POST['adresse']) ? $_POST['adresse'] : NULL;
+>>>>>>> refs/remotes/origin/master
 $numsecu = isset($_POST['numsecu']) ? $_POST['numsecu'] : NULL;
 
   
@@ -34,11 +37,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+<<<<<<< HEAD
 echo "Connected successfully"; 
 $sql = 'INSERT INTO patients 
 VALUES("", "'.$nom.'", "'.$prenom.'", "'.$datenaissance.'",  "'.$adressepostale.'", "'.$numsecu.'", "'.$email.'")';
+=======
+//echo "Connected successfully"; 
+$sql = 'INSERT INTO patients VALUES("", "'.$nom.'", "'.$prenom.'", "'.$datenaissance.'" , "'.$adressepostale.'", "'.$numsecu.'", "'.$email.'")';
+>>>>>>> refs/remotes/origin/master
 if ($conn->query($sql) === TRUE) {
-    echo "les données ont bien étés insérées dans la base de données";
+    //echo "les données ont bien étés insérées dans la base de données";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -49,10 +57,15 @@ $conn->close();
   echo("<center>L'e' est: $email</center><br><br>"); 
   echo("<center>Le date de naissance est: $datenaissance</center><br><br>");
   echo("<center>L'adresse postale est: $adressepostale</center><br><br>");   
+<<<<<<< HEAD
   echo("<center>Le numéro de secu est: $numsecu</center><br><br>"); 
   echo("<center>Le nom est: $nom</center><br><br>");
   
   
+=======
+  echo("<center>Le numéro de la sécu est: $numsecu</center><br><br>"); 
+ 
+>>>>>>> refs/remotes/origin/master
  
   ?>
   <hr>
@@ -60,5 +73,3 @@ $conn->close();
   </body>
   
 </html>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status 

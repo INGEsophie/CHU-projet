@@ -22,13 +22,13 @@
     	<legend>Patients enregistrés</legend><br>
         <form class="form-search">
           <input type="text">
-          <button type="submit" class="btn">Ok</button>
+          <button type="submit" class="btn" id="patients" name="patients">Ok</button>
         </form><br>
 
       <legend>Recherche consultations </legend><br>
         <form class="form-search">
           <input type="text">
-          <button type="submit" class="btn">OK</button>
+          <button type="submit" class="btn" id="consultations" name="consultations">OK</button>
         </form><br>
 
       <legend>Recherche par date</legend><br>
