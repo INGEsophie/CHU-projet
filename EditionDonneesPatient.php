@@ -34,7 +34,7 @@ die("Connection failed: " . $conn->connect_error);
   
   <div class="container-fluid">
     <h2>Editer ses informations personnelles</h2>
-    <form method="post" action="#" class="formulaire">
+    <form method="get" action="#" class="formulaire">
       <fieldset>
         <legend>Pour modifier vos coordonnées vous devez vous identifier puis valider vos modifications</legend> <!-- Titre du fieldset --> 
 		
@@ -66,7 +66,7 @@ die("Connection failed: " . $conn->connect_error);
 	</form>
   </div>
 <?php
-$IdPatient = $_POST['NomPatient'] ? $_POST['NomPatient'] : NULL;
+$IdPatient = $_GET['NomPatient'] ? $_GET['NomPatient'] : NULL;
 
 $sql = ' SELECT * FROM patients WHERE IdPatient='.$IdPatient.'';
 $result = $conn->query($sql); 
@@ -124,15 +124,16 @@ $nusocial = isset($_POST['nusocial']) ? $_POST['nusocial'] : NULL;
 
 
 
-$sql = 'UPDATE patients 
-		SET Nom = \''.$nom.'\'
-		SET Prenom = \''.$prenom.'\'
-		SET DateNaissance = \''.$email.'\'
-		SET AdressPostale = \''.$dateNaissance.'\'
-		SET NumSecu = \''.$adresse.'\'
-		SET Email = \''.$nusocial.'\'';
+$sql = "UPDATE patients
+		SET `Nom` = '$nom', `Prenom` = '$prenom', `DateNaissance` = '$dateNaissance', `AdressPostale` = '$adresse', `NumSecu` = '$nusocial', `Email` = '$email'
+		WHERE `IdPatient` = '$IdPatient'";
 
-
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+		
 $conn->close();  
 
 ?>
