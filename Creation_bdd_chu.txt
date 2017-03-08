@@ -11,6 +11,18 @@ NumSecu bigint(15) NOT NULL UNIQUE,
 Email varchar(255)
 );
 
+CREATE TABLE IF NOT EXISTS `Patients` (
+  `IdPatient` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nom` varchar(25) NOT NULL,
+  `Prenom` varchar(25) NOT NULL,
+  `DateNaissance` date NOT NULL,
+  `AdressPostale` varchar(25) NOT NULL,
+  `NumSecu` int(11) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  PRIMARY KEY (`IdPatient`),
+  UNIQUE KEY `IdPatient` (`IdPatient`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
 CREATE TABLE Services
 (
 IdService int NOT NULL AUTO_INCREMENT PRIMARY KEY,
