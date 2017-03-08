@@ -66,8 +66,8 @@ die("Connection failed: " . $conn->connect_error);
 	</form>
   </div>
 <?php
+$IdPatient = '';
 $IdPatient = $_POST['NomPatient'] ? $_POST['NomPatient'] : NULL;
-
 
 $sql = ' SELECT * FROM patients WHERE IdPatient='.$IdPatient.'';
 $result = $conn->query($sql); 
@@ -75,11 +75,14 @@ $result = $conn->query($sql);
 		
 
 ?>	
-	<form method="post" action="#" class="formulaire">
+	<div>
+		<br>
+		<form method="post" action="#" class="formulaire">
       
 	  
 		<?php
-	  
+		if ($result->num_rows > 0) {
+		while($donnees = $result->fetch_assoc()) {
         echo '<label for="nom">Nom :</label>';
         echo '<input type="text" name="nom" id="nom" value="'.$donnees['Nom'].'"/><br><br>';
 
@@ -99,10 +102,14 @@ $result = $conn->query($sql);
         echo '<input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" value="'.$donnees['NumSecu'].'"/>';
 		echo '<br><br>';
 		echo '<input type="submit" value="Modifier">';
-      
+		}
+		}
+		else {
+		echo "Séléctionnez un patient ci-dessus";
+		}
 		?>
-    </form>
-  </div>
+		</form>
+	</div>
   
 <?php
 
