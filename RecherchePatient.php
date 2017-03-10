@@ -11,30 +11,41 @@
 	<?php 
 	include("header.html"); 
 	?>
-     <?php //Connection avec la BDD.
+     <?php 
 
-		//<!-- On va rechercher un patient --> 
+		// Connection à la base de données
 		
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
 		$dbname = "bdchu";
-		// Create connection
+
+		// Creation de la connection
+
 		$conn = new mysqli($servername, $username, $password, $dbname);
+
+		// Gestion des accents
+
 		$conn->set_charset("utf8");
-		// Check connection
+
+		// Vérificaiton de la connection
+
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
 	?>
 
+	<!-- Création du formulaire -->
+
 	<form method="post" action="#" class="formulaire">
       <fieldset>
-        <legend>Affichage informations patient</legend> <!-- Titre du fieldset --> 
+        <legend>Affichage informations patient</legend>
 		
 		<select name="ident" id="NomPatient" onchange="javascript:GoAction(\'Nom\',this.value);" required>
 
 	<?php		
+
+		// On génère la liste des patients
 
 		$sql = ' SELECT * FROM patients';
 		$result = $conn->query($sql); 
@@ -61,6 +72,8 @@
 	<?php
 		$ident = isset($_POST['ident']) ? $_POST['ident'] : NULL;
 
+		// Récupération de toutes les données concernant le patient
+
 		$sql = ' SELECT * FROM patients 
 		INNER JOIN consultations
 		ON consultations.fk_IdPatient=patients.idPatient
@@ -70,9 +83,9 @@
 		
 		$result = $conn->query($sql);
 		
-		// On affiche les lignes du tableau une à une à l'aide d'une boucle
+		// Création du tableau, entête des colonnes
 				
-		 if ($result->num_rows > 0) {
+		if ($result->num_rows > 0) {
 		echo('<table border="1">
 		<colgroup width =150 span=12></colgroup>
 		<thead> <!-- En-tête du tableau -->
@@ -91,6 +104,9 @@
 		</tr>
 		</thead>
 		<tbody> <!-- Corps du tableau --> ');
+
+		// On affiche les lignes du tableau une à une à l'aide d'une boucle
+
 		while($donnees = $result->fetch_assoc()) {
 		echo ('<tr>');
 		echo ('<td>'.$donnees['IdPatient'].'</td>');
@@ -112,11 +128,11 @@
 		echo "0 results";
 		} 
 
+		// On ferme la connection
+
 		$conn->close();
 		
 	?>
-	
-	
 	
 	<a href="EditionDonneesPatient.php"><button>Modifier les données d'un patient</button></a>
 	<?php 
