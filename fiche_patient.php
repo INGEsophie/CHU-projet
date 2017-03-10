@@ -35,7 +35,7 @@
     <div class="row formulaire">
     	<legend>Patients enregistrés</legend><br>
         <form method="get" action="EditionDonneesPatient.php" class="form-search">
-          <select name="Patients" id="Patients" onchange="javascript:GoAction(\'Nom\',this.value);" required>
+          <select name="NomPatient" id="NomPatient" onchange="javascript:GoAction(\'Nom\',this.value);" required>
           <!-- /* A TERMINER - Liste déroulante pour séléctionner le nom de l'utilisateur */ -->
           <?php   
               $sql = ' SELECT * FROM patients';
@@ -53,7 +53,7 @@
               }
           ?>
           </select>
-          <button type="submit" class="btn" id="patients" name="patients">Ok</button>
+          <button type="submit" class="btn">Ok</button>
         </form><br>
 
       <legend>Recherche consultations </legend><br>
