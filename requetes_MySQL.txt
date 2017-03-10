@@ -23,10 +23,17 @@ Modification infos personnelles patient
 
 UPDATE patients SET Nom = 'New_Nom' WHERE IdPatient='id'
 UPDATE patients SET Prenom = 'New_Prenom' WHERE IdPatient='id'
+<<<<<<< HEAD
+UPDATE patients SET DateNaissance = 'New_DateNaissance' IdPatient='id'
+UPDATE patients SET AdressPostale = 'New_AdressPostale' IdPatient='id'
+UPDATE patients SET NumSecu = 'New_NumSecu' IdPatient='id'
+UPDATE patients SET Email = 'New_Email' IdPatient='id'
+=======
 UPDATE patients SET DateNaissance = 'New_DateNaissance' WHERE IdPatient='id'
 UPDATE patients SET AdressPostale = 'New_AdressPostale' WHERE IdPatient='id'
 UPDATE patients SET NumSecu = 'New_NumSecu' WHERE IdPatient='id'
 UPDATE patients SET Email = 'New_Email' WHERE IdPatient='id'
+>>>>>>> origin/master
 
 ------------------------------------------------------------------------
 
