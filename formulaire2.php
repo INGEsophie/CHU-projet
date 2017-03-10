@@ -124,7 +124,6 @@ $butconsul = isset($_POST['ButConsul']) ? $_POST['ButConsul'] : NULL;
 	
 	
         <form class="form-search">
-          <select>
 		    <?php // Supprimer connexion voir (*1)
 $servername = "localhost";
 $username = "root";
@@ -140,7 +139,7 @@ if ($conn->connect_error) {
 
 $fk_IdPatient = $_POST['Iddupatient'] ? $_POST['Iddupatient'] : NULL;
 $fk_IdService = $_POST['IDduservice'] ? $_POST['IDduservice'] : NULL;
-
+// Dans la requête SQL remplacer consultation par consultations (voir nom de la table dans la base de données)
 $sql = 'INSERT INTO consultation 
 VALUES("", "'.$fk_IdPatient.'", "'.$fk_IdService.'", "'.$dateconsul.'" , "'.$heureconsul.'", "'.$butconsul.'")';
 if ($conn->query($sql) === TRUE) {
@@ -157,7 +156,6 @@ $conn->close();
 			  
 
         
-	  
 	  
 	  
     <input type="submit" value="Envoyer" />
