@@ -53,6 +53,7 @@ $conn->close();
 			  
 			  
 		  </select>
+<!-- Bouton à supprimer il est inutile de valider le champ select -->
           <button type="submit" class="btn" id="patients" name="patients">Ok</button>
         </form><br>
 	
@@ -96,6 +97,7 @@ else {
 $conn->close();
 ?>
 		  </select>
+<!-- Bouton à supprimer il est inutile de valider le champ select -->
           <button type="submit" class="btn" id="services" name="services">Ok</button>
         </form><br>
 	
