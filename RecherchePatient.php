@@ -3,10 +3,14 @@
     <head>
 		<meta charset="utf-8"/>
         <title>Test Base de donnée</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
     </head>
     <body>
-
+	<?php 
+	include("header.html"); 
+	?>
      <?php //Connection avec la BDD.
 
 		//<!-- On va rechercher un patient --> 
@@ -112,7 +116,11 @@
 		
 	?>
 	
-	<a href="EditionDonneesPatient.php"><button>Modifier les données d'un patient</button></a>
 	
+	
+	<a href="EditionDonneesPatient.php"><button>Modifier les données d'un patient</button></a>
+	<?php 
+	include("footer.html");
+	?>
     </body>
 </html>
