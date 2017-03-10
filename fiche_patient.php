@@ -81,9 +81,12 @@
           <button type="submit" class="btn" id="consultations" name="consultations">OK</button>
         </form><br>
 
-      <legend>Recherche par date</legend><br>
-      <input type="text" id="date" name="date" placeholder="date" required>
-      <button type="submit" class="btn" id="submit">OK</button>
+      <legend>Recherche de date à date</legend><br>
+      <form action="AffichageConsultationsDateADate.php" method="post">
+			<input type="date" name="dateun" id="dateun">
+			<input type="date" name="datedeux" id="datedeux">
+			<button type="submit" class="btn">Ok</button>
+		</form>
     </div>
   </div>
 

@@ -1,3 +1,8 @@
+<?php
+// Code pour retirer l'affichage des erreurs PHP qui ici ne sont pas pertinentes 
+ini_set('display_errors', 0);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
