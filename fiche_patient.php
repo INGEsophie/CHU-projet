@@ -83,8 +83,8 @@
 
       <legend>Recherche de date à date</legend><br>
       <form action="AffichageConsultationsDateADate.php" method="post">
-			<input type="date" name="dateun" id="dateun">
-			<input type="date" name="datedeux" id="datedeux">
+			<input type="date" name="dateun" id="dateun" placeholder="AAAA-MM-JJ" onFocus="javascript:this.placeholder=''">
+			<input type="date" name="datedeux" id="datedeux" placeholder="AAAA-MM-JJ" onFocus="javascript:this.placeholder=''">
 			<button type="submit" class="btn">Ok</button>
 		</form>
     </div>
