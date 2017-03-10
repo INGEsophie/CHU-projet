@@ -3,14 +3,20 @@
     <head>
 		<meta charset="utf-8"/>
         <title>Test Base de donnée</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
     </head>
     <body>
-	
-		<form action="#" method="post">
+
+		<?php 
+		include("header.html"); 
+		?>
+		
+		<form action="AffichageConsultationsDateADate.php" method="post">
 			<input type="date" name="dateun" id="dateun">
 			<input type="date" name="datedeux" id="datedeux">
-			<input type="submit">
+			<button type="submit" class="btn">Ok</button>
 		</form>
 		
 		
@@ -75,5 +81,9 @@
 		$conn->close();
 		
 		?>
+		
+	<?php 
+	include("footer.html");
+	?>
     </body>
 </html>

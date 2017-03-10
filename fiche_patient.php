@@ -82,7 +82,7 @@
         </form><br>
 
       <legend>Recherche de date à date</legend><br>
-      <form action="AffichageConsultationsDateADate" method="post">
+      <form action="AffichageConsultationsDateADate.php" method="post">
 			<input type="date" name="dateun" id="dateun">
 			<input type="date" name="datedeux" id="datedeux">
 			<button type="submit" class="btn">Ok</button>
