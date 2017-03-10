@@ -34,7 +34,7 @@ die("Connection failed: " . $conn->connect_error);
   
   <div class="container-fluid">
     <h2>Editer ses informations personnelles</h2>
-    <form method="post" action="#" class="formulaire">
+    <form method="get" action="EditionDonneesPatient.php" class="formulaire">
       <fieldset>
         <legend>Pour modifier vos coordonnées vous devez vous identifier puis valider vos modifications</legend> <!-- Titre du fieldset --> 
 		
@@ -66,8 +66,7 @@ die("Connection failed: " . $conn->connect_error);
 	</form>
   </div>
 <?php
-$IdPatient = $_POST['NomPatient'] ? $_POST['NomPatient'] : NULL;
-
+$IdPatient = $_GET['NomPatient'] ? $_GET['NomPatient'] : NULL;
 
 $sql = ' SELECT * FROM patients WHERE IdPatient='.$IdPatient.'';
 $result = $conn->query($sql); 
@@ -75,34 +74,41 @@ $result = $conn->query($sql);
 		
 
 ?>	
-	<form method="post" action="#" class="formulaire">
+	<div>
+		<br>
+		<form method="post" action="#" class="formulaire">
       
 	  
 		<?php
-	  
+		if ($result->num_rows > 0) {
+		while($donnees = $result->fetch_assoc()) {
         echo '<label for="nom">Nom :</label>';
-        echo '<input type="text" name="nom" id="nom" value="'.$donnees[Nom].'"/><br><br>';
+        echo '<input type="text" name="nom" id="nom" value="'.$donnees['Nom'].'"/><br><br>';
 
         echo '<label for="prenom">Prénom :</label>';
-        echo '<input type="text" name="prenom" id="prenom" value="'.$donnees[Prenom].'"/><br><br>';
+        echo '<input type="text" name="prenom" id="prenom" value="'.$donnees['Prenom'].'"/><br><br>';
    
         echo '<label for="email">Votre Email :</label>';
-        echo '<input type="email" name="email" id="email" value="'.$donnees[Email].'"/><br><br>';
+        echo '<input type="email" name="email" id="email" value="'.$donnees['Email'].'"/><br><br>';
          
         echo '<label for="email">Votre date de naissance :</label>';
-        echo '<input type="date" name="dateNaissance" id="dateNaissance" value="'.$donnees[DateNaissance].'"/><br><br>';
+        echo '<input type="date" name="dateNaissance" id="dateNaissance" value="'.$donnees['DateNaissance'].'"/><br><br>';
 
         echo '<label for="adresse">Votre adresse :</label>';
-        echo '<input type="text" name="adresse" id="adresse"  size="30" maxlength="80" value="'.$donnees[AdressPostale].'"/><br><br>';
+        echo '<input type="text" name="adresse" id="adresse"  size="30" maxlength="80" value="'.$donnees['AdressPostale'].'"/><br><br>';
          
         echo '<label for="nusocial">Votre numero de sécurité social :</label>';
-        echo '<input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" value="'.$donnees[NumSecu].'"/>';
+        echo '<input type="text" name="nusocial" id="nusocial" size="15" minlength="15" maxlength="15" value="'.$donnees['NumSecu'].'"/>';
 		echo '<br><br>';
 		echo '<input type="submit" value="Modifier">';
-      
+		}
+		}
+		else {
+		echo "Séléctionnez un patient ci-dessus";
+		}
 		?>
-    </form>
-  </div>
+		</form>
+	</div>
   
 <?php
 
@@ -118,14 +124,16 @@ $nusocial = isset($_POST['nusocial']) ? $_POST['nusocial'] : NULL;
 
 
 
-$sql = 'UPDATE patients SET Nom = \''.$nom.'\'
-UPDATE patients SET Prenom = \''.$prenom.'\'
-UPDATE patients SET DateNaissance = \''.$email.'\'
-UPDATE patients SET AdressPostale = \''.$dateNaissance.'\'
-UPDATE patients SET NumSecu = \''.$adresse.'\'
-UPDATE patients SET Email = \''.$nusocial.'\'';
+$sql = "UPDATE patients
+		SET `Nom` = '$nom', `Prenom` = '$prenom', `DateNaissance` = '$dateNaissance', `AdressPostale` = '$adresse', `NumSecu` = '$nusocial', `Email` = '$email'
+		WHERE `IdPatient` = '$IdPatient'";
 
-
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+		
 $conn->close();  
 
 ?>

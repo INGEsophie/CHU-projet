@@ -17,8 +17,7 @@
     <h2>Formulaire d'hospitalisation</h2>
     <form method="post" action="traitement.php" class="formulaire">
       <fieldset>
-        <legend>Coordonnées</legend> <!-- Titre du fieldset --> 
-
+        <legend>Coordonnées</legend> <!-- Titre du fieldset -->
         <label for="nom">Quel est votre nom ?</label>
         <input type="text" name="nom" id="nom" /><br><br>
 
@@ -43,7 +42,7 @@
               
         <label for="DateConsul">Le jour de consultation</label>
         <input type="date" name="dateConsul" id="dateConsul"><br><br>
-        
+
         <label for="HeureConsul">L'heure de consultation</label>
         <input type="time" name="heureConsul" id="heureConsul"><br><br>
               
@@ -54,7 +53,7 @@
         <input type="text" name="NomService" id="NomService"  size="15" maxlength="30" /><br><br>    
       </fieldset>
       <input type="submit" name="envoyer" value="Envoyer" class="btn bnt-defaut" />
-    </form>
+     </form>
   </div>
 
   <?php 
