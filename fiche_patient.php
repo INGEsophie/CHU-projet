@@ -57,7 +57,7 @@
         </form><br>
 
       <legend>Recherche consultations </legend><br>
-        <form method="get" acion="#" class="form-search">
+        <form method="get" action="#" class="form-search">
           <select name="consult" id="consult" onchange="javascript:GoAction(\'Nom\',this.value);" required>
           <!-- /* A TERMINER - Liste déroulante pour séléctionner le nom de l'utilisateur */ -->
           <?php   
