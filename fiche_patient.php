@@ -34,7 +34,7 @@
     <h1>Outil recherche</h1>
     <div class="row formulaire">
     	<legend>Patients enregistrés</legend><br>
-        <form method="get" acion="EditionDonneesPatient.php" class="form-search">
+        <form method="get" action="EditionDonneesPatient.php" class="form-search">
           <select name="Patients" id="Patients" onchange="javascript:GoAction(\'Nom\',this.value);" required>
           <!-- /* A TERMINER - Liste déroulante pour séléctionner le nom de l'utilisateur */ -->
           <?php   
