@@ -1,6 +1,17 @@
+<?php
+$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "bdchu";
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		
+?>
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
+	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -28,9 +39,19 @@
       <select class="select">
 
         <optgroup label="patients">
-          <option>maurice</option>
-          <option>dupont</option>
-          <option>mocktar</option>
+          <option>nom du patient
+		  <?php
+				
+				$query = mysql_query("SELECT * FROM patients ORDER BY name");
+				while ($back = mysql_fetch_assoc($query)) {
+					echo "\t\t\t\t<option value=\"" . $back["nom"] . "\">"  "</option>\n";
+				} 
+					
+					?>
+		  
+		  </option>
+		  
+          
         </optgroup>
       </select>
 
