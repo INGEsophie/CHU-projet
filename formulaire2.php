@@ -12,6 +12,7 @@
   
 <legend>Patients enregistrés</legend><br>
         <form class="form-search">
+<!-- Dans select ajouter name="Iddupatient" -->
           <select>
 		    <?php
 $servername = "localhost";
@@ -44,7 +45,7 @@ else {
     echo "0 results";
 }
 
-	
+// Supprimer la fermeture, voir (*1)
 $conn->close();
 ?>
 			  
@@ -61,8 +62,9 @@ $conn->close();
 	
 	<legend>Service</legend><br>
         <form class="form-search">
+<!-- Dans select ajouter name="IDduservice" -->
           <select>
-		    <?php
+		    <?php /* (1) Peut être supprimer la connexion à la base de données ci dessous (certainement inutile) */
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -80,6 +82,7 @@ if ($result->num_rows > 0) {
    
  while($donnees = $result->fetch_assoc()) {
        
+	   // Ajouter dans option valeur="'.$donnees['IdService'].'"   (vériier la nom dans la base de données)
        echo ('<option>'.$donnees['NomService'].'</option>');
       
       }
@@ -89,7 +92,7 @@ else {
     echo "0 results";
 }
 
-
+// A supprimer voir (*1)
 $conn->close();
 ?>
 		  </select>
@@ -97,12 +100,15 @@ $conn->close();
         </form><br>
 	
 <label for="DateConsul">La date de consultation</label>
+<!-- Changer  datenaissance par DateConsul -->
        <input type="date" name="datenaissance" id="DateNaissance"><br><br>
 	
 <label for="HeureConsul">L'heure de la consultation</label>
+<!-- Changer  heureconsul par HeureConsul -->
        <input type="time" name="heureconsul" id="HeureConsul"><br><br>
 	
 <label for="ButConsul">Motif de consultation:</label>
+<!-- Changer  butconsul par ButConsul -->
 	<textarea name="butconsul" id="ButConsul" rows="5" cols="15" ></textarea><br><br>
 	
 	
@@ -119,7 +125,7 @@ $butconsul = isset($_POST['ButConsul']) ? $_POST['ButConsul'] : NULL;
 	
         <form class="form-search">
           <select>
-		    <?php
+		    <?php // Supprimer connexion voir (*1)
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -131,6 +137,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$fk_IdPatient = $_POST['Iddupatient'] ? $_POST['Iddupatient'] : NULL;
+$fk_IdService = $_POST['IDduservice'] ? $_POST['IDduservice'] : NULL;
+
 $sql = 'INSERT INTO consultation 
 VALUES("", "'.$fk_IdPatient.'", "'.$fk_IdService.'", "'.$dateconsul.'" , "'.$heureconsul.'", "'.$butconsul.'")';
 if ($conn->query($sql) === TRUE) {
@@ -146,23 +156,11 @@ $conn->close();
 			  
 			  
 
-			  
-		  </select>
-          <button type="submit" class="btn" id="services" name="services">Ok</button>
-        </form><br>
-	
-	
-	
-	
-	
-  
-	  
-	  
         
 	  
 	  
 	  
-    <input type="submit" name="envoyer" value="Envoyer" />
+    <input type="submit" value="Envoyer" />
        
   <?php 
     include("footer.html");
