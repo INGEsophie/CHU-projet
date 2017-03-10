@@ -21,7 +21,7 @@
         <label for="nom">Quel est votre nom ?</label>
         <input type="text" name="nom" id="nom" /><br><br>
 
-<<<<<<< HEAD
+
   <h2>Formulaire d'hospitalisation.</h2>
   <form method="post" action="traitement.php">
     <fieldset>
@@ -53,7 +53,7 @@
        
     
 
-=======
+
         <label for="prenom">Quel est votre prénom ?</label>
         <input type="text" name="prenom" id="prenom" /><br><br>
    
@@ -62,7 +62,7 @@
          
         <label for="email">Quel est votre date de naissance ?</label>
         <input type="date" name="dateNaissance" id="dateNaissance"><br><br>
->>>>>>> refs/remotes/origin/master
+
 
         <label for="adresse">Votre adresse :</label>
         <input type="text" name="adresse" id="adresse"  size="30" maxlength="80" /><br><br>
