@@ -111,5 +111,8 @@
 		$conn->close();
 		
 	?>
+	
+	<a href="EditionDonneesPatient.php"><button>Modifier les données d'un patient</button></a>
+	
     </body>
 </html>
