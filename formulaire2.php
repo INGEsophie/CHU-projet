@@ -11,14 +11,15 @@
 
   
 <legend>Patients enregistrés</legend><br>
-        <form class="form-search">
-<!-- Dans select ajouter name="Iddupatient" -->
-          <select>
+        <form class="form-search" method="post" action=traitement2.php>
+
+          <select name="idpatient">
 		    <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "bdchu";
+			  
 // Create connection
 			  
 			  
@@ -32,6 +33,8 @@ echo "Connected successfully";
 $sql = 'SELECT * FROM patients ';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+	
+	echo ('<option value="Nom" selected=""> Selection patient</option>');
    
  while($donnees = $result->fetch_assoc()) {
       
@@ -45,46 +48,29 @@ else {
     echo "0 results";
 }
 
-// Supprimer la fermeture, voir (*1)
-$conn->close();
-?>
-			  
-			  
-			  
+?>  
 			  
 		  </select>
 <!-- Bouton à supprimer il est inutile de valider le champ select -->
-          <button type="submit" class="btn" id="patients" name="patients">Ok</button>
-        </form><br>
-	
-	
-	
+          
+        <br>
 	
 	
 	<legend>Service</legend><br>
-        <form class="form-search">
-<!-- Dans select ajouter name="IDduservice" -->
-          <select>
-		    <?php /* (1) Peut être supprimer la connexion à la base de données ci dessous (certainement inutile) */
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bdchu";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully"; 
+        
+
+          <select name="IDduservice">
+		    <?php 
+			  
+
 $sql = 'SELECT * FROM services ';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
    
  while($donnees = $result->fetch_assoc()) {
        
-	   // Ajouter dans option valeur="'.$donnees['IdService'].'"   (vériier la nom dans la base de données)
-       echo ('<option>'.$donnees['NomService'].'</option>');
+	  
+       echo ('<option valeur="'.$donnees['IdService'].'">'.$donnees['NomService'].'</option>');
       
       }
        
@@ -93,17 +79,15 @@ else {
     echo "0 results";
 }
 
-// A supprimer voir (*1)
-$conn->close();
+
 ?>
 		  </select>
-<!-- Bouton à supprimer il est inutile de valider le champ select -->
-          <button type="submit" class="btn" id="services" name="services">Ok</button>
-        </form><br>
+
+        <br>
 	
 <label for="DateConsul">La date de consultation</label>
 <!-- Changer  datenaissance par DateConsul -->
-       <input type="date" name="datenaissance" id="DateNaissance"><br><br>
+       <input type="date" name="dateconsul" id="DateConsul"><br><br>
 	
 <label for="HeureConsul">L'heure de la consultation</label>
 <!-- Changer  heureconsul par HeureConsul -->
@@ -116,33 +100,26 @@ $conn->close();
 	
 	
 <?php	
-$dateconsul = isset($_POST['DateConsul']) ? $_POST['DateConsul'] : NULL;	
-$heureconsul = isset($_POST['HeureConsul']) ? $_POST['HeureConsul'] : NULL;	
-$butconsul = isset($_POST['ButConsul']) ? $_POST['ButConsul'] : NULL;	
+$dateconsul = isset($_POST['dateconsul']) ? $_POST['dateconsul'] : NULL;	
+$heureconsul = isset($_POST['heureconsul']) ? $_POST['heureconsul'] : NULL;	
+$butconsul = isset($_POST['butconsul']) ? $_POST['butconsul'] : NULL;
+//$idpa = isset($_POST['idpatient']) ? $_POST['idpatient'] : NULL;
+//$idservice = isset($_POST['IDduservice']) ? $_POST['IDduservice'] : NULL;
 	?>
 	
 	
 	
 	
 	
-        <form class="form-search">
-		    <?php // Supprimer connexion voir (*1)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bdchu";
-			  
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+        
+		    <?php 
 
-$fk_IdPatient = $_POST['Iddupatient'] ? $_POST['Iddupatient'] : NULL;
-$fk_IdService = $_POST['IDduservice'] ? $_POST['IDduservice'] : NULL;
+
+$fk_IdPatient = $_POST['IdPatient'] ? $_POST['IdPatient'] : NULL;
+$fk_IdService = $_POST['IdService'] ? $_POST['IdService'] : NULL;
+			
 // Dans la requête SQL remplacer consultation par consultations (voir nom de la table dans la base de données)
-$sql = 'INSERT INTO consultation 
+$sql = 'INSERT INTO consultations 
 VALUES("", "'.$fk_IdPatient.'", "'.$fk_IdService.'", "'.$dateconsul.'" , "'.$heureconsul.'", "'.$butconsul.'")';
 if ($conn->query($sql) === TRUE) {
     echo "les données ont bien étés insérées dans la base de données";
@@ -161,7 +138,7 @@ $conn->close();
 	  
 	  
     <input type="submit" value="Envoyer" />
-       
+	</form>   
   <?php 
     include("footer.html");
   ?>
