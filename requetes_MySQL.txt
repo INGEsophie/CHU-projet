@@ -1,0 +1,81 @@
+Ajout d'un patient
+
+INSERT INTO Patients 
+VALUES ('IdPatient', 'Nom', 'Prenom', 'DateNaissance', 'Adresspostale', 'NumSecu', 'Email');
+
+------------------------------------------------------------------------
+
+Ajout d'un service
+
+INSERT INTO Services 
+VALUES ('IdService', 'NomService');
+
+------------------------------------------------------------------------
+
+Ajout d'une consultation
+
+INSERT INTO Consultations 
+VALUES ('IdConsul', 'fk_idPatient', 'fk_idService', 'DateConsul', 'heureConsul', 'ButConsul');
+
+------------------------------------------------------------------------
+
+Modification infos personnelles patient
+
+UPDATE patients SET Nom = 'New_Nom' WHERE IdPatient='id'
+UPDATE patients SET Prenom = 'New_Prenom' WHERE IdPatient='id'
+UPDATE patients SET DateNaissance = 'New_DateNaissance' WHERE IdPatient='id'
+UPDATE patients SET AdressPostale = 'New_AdressPostale' WHERE IdPatient='id'
+UPDATE patients SET NumSecu = 'New_NumSecu' WHERE IdPatient='id'
+UPDATE patients SET Email = 'New_Email' WHERE IdPatient='id'
+
+------------------------------------------------------------------------
+
+Modification consultation patient
+
+UPDATE consultations SET DateConsul='New_Date' WHERE IdConsul='IdConsul'
+UPDATE consultations SET HeureConsul='New_Heure' WHERE IdConsul='IdConsul'
+UPDATE consultations SET ButConsul='New_But' WHERE IdConsul='IdConsul'
+
+------------------------------------------------------------------------
+
+Supprimer un patient
+
+DELETE FROM patients WHERE IdPatient='IdPatient'
+
+------------------------------------------------------------------------
+
+Supprimer un service
+
+DELETE FROM services WHERE NomService = 'NomService'
+
+-------------
+-----------------------------------------------------------
+
+Supprimer une consultation
+
+DELETE FROM consultations WHERE IdConsul = 'IdConsul'
+
+------------------------------------------------------------------------
+
+Affichage fiche patient
+
+SELECT patients.Nom, patients.Prenom, patients.DateNaissance, patients.NumSecu, patients.AdressPostale, patients.Email, consultations.IdConsul, consultations.DateConsul, consultations.HeureConsul, consultations.ButConsul, services.NomService 
+FROM patients 
+INNER JOIN consultations 
+ON consultations.fk_IdPatient=patients.IdPatient 
+INNER JOIN services 
+ON consultations.fk_IdService=services.IdService 
+WHERE Nom='Nom'
+
+-----------------------------------------------------------------------
+
+Affichage Consultation de date à date
+
+SELECT consultations.DateConsul, consultations.ButConsul,  services.NomService, patients.Nom, patients.Prenom
+FROM consultations 
+INNER JOIN services
+ON consultations.fk_IdService=services.IdService
+INNER JOIN patients
+ON consultations.fk_IdPatient=patients.IdPatient
+WHERE consultations.DateConsul 
+BETWEEN 'date1' AND 'date2'
