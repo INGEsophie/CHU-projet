@@ -10,7 +10,7 @@
 <body>
 
   <?php 
-    include("header.html"); 
+    //include("header.html"); 
   ?>
 
   <div class="container-fluid">
@@ -21,6 +21,39 @@
         <label for="nom">Quel est votre nom ?</label>
         <input type="text" name="nom" id="nom" /><br><br>
 
+
+  <h2>Formulaire d'hospitalisation.</h2>
+  <form method="post" action="traitement.php">
+    <fieldset>
+       <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+
+       <label for="Nom">le nom ?</label>
+       <input type="text" name="nom" id="Nom" /><br><br>
+
+       <label for="Prenom">le prénom ?</label>
+       <input type="text" name="prenom" id="Prenom" /><br><br>
+ 
+       <label for="Email"l e-mail ?></label>
+       <input type="email" name="email" id="Email" /><br><br>
+       
+       <label for="DateNaissance">La date de naissance ?</label>
+       <input type="date" name="datenaissance" id="DateNaissance"><br><br>
+
+       <label for="AdressePostale">Votre adresse :</label>
+            <input type="text" name="adresse" id="AdressePostale"  size="30" maxlength="80" /><br><br>
+       
+       <label for="NumSecu">Le numero de sécurité social :</label>
+       <input type="text" name="numsecu" id="NumSecu" size="15" minlength="15" maxlength="15" />
+       
+       
+       
+    </fieldset>
+
+    
+       
+    
+
+
         <label for="prenom">Quel est votre prénom ?</label>
         <input type="text" name="prenom" id="prenom" /><br><br>
    
@@ -29,6 +62,7 @@
          
         <label for="email">Quel est votre date de naissance ?</label>
         <input type="date" name="dateNaissance" id="dateNaissance"><br><br>
+
 
         <label for="adresse">Votre adresse :</label>
         <input type="text" name="adresse" id="adresse"  size="30" maxlength="80" /><br><br>
