@@ -14,7 +14,6 @@
   ?>
 
   <div class="container-fluid">
-    <h2>Formulaire d'hospitalisation</h2>
 
   <h2>Formulaire d'hospitalisation.</h2>
   <form method="post" action="traitement.php">
