@@ -31,8 +31,8 @@ $h_consul = $_POST['heureconsul'] ? $_POST['heureconsul'] : NULL;
 $b_consul = $_POST['butconsul'] ? $_POST['butconsul'] : NULL;
 
 
-     $sql = 'INSERT INTO consultations (IdConsul, fk_IdPatient, fk_IdService, DateConsul, HeureConsul, ButConsul) 
-VALUES("", "'.$id_patient.'", "'.$id_service.'",  "'.$d_consul.'" , "'.$h_consul.'", "'.$b_consul.'")';
+     $sql = 'INSERT INTO consultations ( fk_IdPatient, fk_IdService, DateConsul, HeureConsul, ButConsul) 
+VALUES( "'.$id_patient.'", "'.$id_service.'",  "'.$d_consul.'" , "'.$h_consul.'", "'.$b_consul.'")';
     if ($conn->query($sql) === TRUE) {
     echo "les données ont bien étés insérées dans la base de données";
 } else {
