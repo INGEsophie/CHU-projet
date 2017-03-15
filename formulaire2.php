@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+<?php 
+    include("header.html"); 
+  ?>
   
 
 <form class="form-search" method="post" action="traitement2.php">
