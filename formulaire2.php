@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>CHU Evreux - Enregistrement patient</title>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
@@ -10,67 +10,69 @@
 <body>
 
   
-<legend>Patients enregistrés</legend><br>
-        <form class="form-search" method="post" action=traitement2.php>
 
-          <select name="idpatient">
-		    <?php
+<form class="form-search" method="post" action="traitement2.php">
+
+
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "bdchu";
 			  
-// Create connection
-			  
-			  
-			  
+// Create connection	  
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully"; 
-$sql = 'SELECT * FROM patients ';
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
+//echo "Connected successfully"; 
+?>
+<legend>Patients enregistrés	
+<select name="IdPatient">
+		    <?php
+$sql1 = 'SELECT * FROM patients ';
+$result1 = $conn->query($sql1);
+if ($result1->num_rows > 0) {
 	
-	echo ('<option value="Nom" selected=""> Selection patient</option>');
+	echo ('<option value="Nom" selected=""> Selectionnez un patient</option>');
    
- while($donnees = $result->fetch_assoc()) {
+ while($donnees1 = $result1->fetch_assoc()) {
       
 	 
-       echo ('<option value="'.$donnees['IdPatient'].'">'.$donnees['Nom'].'&nbsp;'.$donnees['Prenom'].'</option>');
-      
+       echo ('<option value="'.$donnees1['IdPatient'].'">'.$donnees1['Nom'].'&nbsp;'.$donnees1['Prenom'].'</option>');
       }
+	  
+	  
        
 } 
 else {
     echo "0 results";
 }
-
+//$conn->close();
 ?>  
 			  
-		  </select>
+</select>
+</legend><br>
 <!-- Bouton à supprimer il est inutile de valider le champ select -->
           
         <br>
 	
 	
-	<legend>Service</legend><br>
+<legend>Services
         
-
-          <select name="IDduservice">
+<select name="IdService">
 		    <?php 
 			  
 
-$sql = 'SELECT * FROM services ';
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
+$sql2 = 'SELECT * FROM services ';
+$result2 = $conn->query($sql2);
+if ($result2->num_rows > 0) {
    
- while($donnees = $result->fetch_assoc()) {
+ while($donnees2 = $result2->fetch_assoc()) {
        
 	  
-       echo ('<option valeur="'.$donnees['IdService'].'">'.$donnees['NomService'].'</option>');
+       echo ('<option value="'.$donnees2['IdService'].'">'.$donnees2['NomService'].'</option>');
       
       }
        
@@ -78,12 +80,12 @@ if ($result->num_rows > 0) {
 else {
     echo "0 results";
 }
-
+$conn->close();
 
 ?>
-		  </select>
+</select>
+</legend><br>
 
-        <br>
 	
 <label for="DateConsul">La date de consultation</label>
 <!-- Changer  datenaissance par DateConsul -->
@@ -96,51 +98,11 @@ else {
 <label for="ButConsul">Motif de consultation:</label>
 <!-- Changer  butconsul par ButConsul -->
 	<textarea name="butconsul" id="ButConsul" rows="5" cols="15" ></textarea><br><br>
-	
-	
-	
-<?php	
-$dateconsul = isset($_POST['dateconsul']) ? $_POST['dateconsul'] : NULL;	
-$heureconsul = isset($_POST['heureconsul']) ? $_POST['heureconsul'] : NULL;	
-$butconsul = isset($_POST['butconsul']) ? $_POST['butconsul'] : NULL;
-//$idpa = isset($_POST['idpatient']) ? $_POST['idpatient'] : NULL;
-//$idservice = isset($_POST['IDduservice']) ? $_POST['IDduservice'] : NULL;
-	?>
-	
-	
-	
-	
-	
-        
-		    <?php 
-
-
-$fk_IdPatient = $_POST['IdPatient'] ? $_POST['IdPatient'] : NULL;
-$fk_IdService = $_POST['IdService'] ? $_POST['IdService'] : NULL;
-			
-// Dans la requête SQL remplacer consultation par consultations (voir nom de la table dans la base de données)
-$sql = 'INSERT INTO consultations 
-VALUES("", "'.$fk_IdPatient.'", "'.$fk_IdService.'", "'.$dateconsul.'" , "'.$heureconsul.'", "'.$butconsul.'")';
-if ($conn->query($sql) === TRUE) {
-    echo "les données ont bien étés insérées dans la base de données";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-			  
-			  
-$conn->close();
-?>
-			  
-			  
-
-        
-	  
 	  
     <input type="submit" value="Envoyer" />
-	</form>   
+</form>   
   <?php 
-    include("footer.html");
+  include("footer.html");
   ?>
 
 </body>
